@@ -1,0 +1,99 @@
+/* Mobile-first styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+.card-container {
+  perspective: 1000px;
+  width: 90vw;
+  max-width: 400px;
+}
+
+.card {
+  /* width: 100%; */
+  /* height: 900px; */
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  /* width: 100%; */
+  /* height: 100%; */
+  border-radius: 15px;
+  backface-visibility: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.card-front {
+  background-color: #ffdee9;
+  color: #8a2be2;
+  text-align: center;
+  width: 100%;
+  height: 550px;
+}
+
+.card-back {
+  background-color: #ffe6f0;
+  color: #4b2e2e;
+  transform: rotateY(180deg);
+  flex-direction: column;
+  text-align: center;
+  overflow-y: auto;
+  width: 100%;
+  height: 900px;
+}
+
+.card-back h2 {
+  margin-bottom: 10px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card-back p {
+  font-size: 1rem;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+footer {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #8a4f4f;
+}
+
+/* Flip class */
+.flipped {
+  transform: rotateY(180deg);
+}
